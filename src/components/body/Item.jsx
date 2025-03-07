@@ -11,7 +11,7 @@ const Item = ({ id, price, title, content, img_URI }) => {
       }}
     >
       <div className="img_wrapper">
-        <img src={img_URI} />
+        <img src={img_URI[0]} />
       </div>
       <div className="title">{title}</div>
       <div className="content">{content}</div>

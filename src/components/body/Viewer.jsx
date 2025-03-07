@@ -1,6 +1,7 @@
 import "./Viewer.css";
 import { getFilteredPrice } from "../../utils/getFilteredPrice";
 import { useState } from "react";
+import ImageViwer from "./ImageViewer";
 
 const Viewer = ({ data }) => {
   const filteredPrice = getFilteredPrice(data.price);
@@ -14,9 +15,7 @@ const Viewer = ({ data }) => {
 
   return (
     <div className="Viewer">
-      <section className="image_wrapper">
-        <img src={data.img_URI} />
-      </section>
+      <ImageViwer img_URIs={data.img_URI} />
       <section className="info_wrapper">
         <section className="title">{data.title}</section>
         <section className="author">{`작가 : ${data.author}`}</section>
