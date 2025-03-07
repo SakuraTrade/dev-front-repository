@@ -7,17 +7,6 @@
   gap: 10px;
   border: 1px solid rgb(236, 236, 236);
 }
-
-.image_wrapper {
-  flex: 1;
-}
-.thumbnails {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  gap: 2px;
-}
-
 .info_wrapper {
   flex: 1;
   display: flex;

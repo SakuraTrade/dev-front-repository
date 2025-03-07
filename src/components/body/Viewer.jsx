@@ -2,12 +2,13 @@ import "./Viewer.css";
 import { getFilteredPrice } from "../../utils/getFilteredPrice";
 import { useState } from "react";
 import ImageViwer from "./ImageViewer";
+import EmblaCarousel from "./EmblaCarousel";
 
 const Viewer = ({ data }) => {
   const filteredPrice = getFilteredPrice(data.price);
   const [userQuantity, setQuantity] = useState(0);
   const total_price = getFilteredPrice(data.price * userQuantity);
-
+  const OPTIONS = {};
   const quantityChangeHandler = (e) => {
     const value = parseInt(e.target.value);
     setQuantity(value);
@@ -15,7 +16,8 @@ const Viewer = ({ data }) => {
 
   return (
     <div className="Viewer">
-      <ImageViwer img_URIs={data.img_URI} />
+      {/* <ImageViwer img_URIs={data.img_URI} /> */}
+      <EmblaCarousel slides={data.img_URI} options={OPTIONS} />
       <section className="info_wrapper">
         <section className="title">{data.title}</section>
         <section className="author">{`작가 : ${data.author}`}</section>
