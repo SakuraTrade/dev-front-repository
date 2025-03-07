@@ -19,7 +19,7 @@ const mockData = [
   {
     id: 2,
     price: 15000,
-    quantity: 10,
+    quantity: 5,
     author: "B",
     createdDate: new Date(2025, 0, 2),
     title: "test_data2",

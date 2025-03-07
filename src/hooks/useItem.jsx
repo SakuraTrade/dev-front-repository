@@ -21,7 +21,7 @@ const useItem = (id) => {
     }
 
     setCurItem(currentItem);
-  }, [data, id, nav]);
+  }, [id]);
 
   return curItem;
 };
