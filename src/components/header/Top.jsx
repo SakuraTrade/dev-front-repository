@@ -1,5 +1,5 @@
-import Button from "../Button";
-import "./Top.css";
+import Button from "../common/Button";
+import "../common/Button";
 
 const Top = () => {
   return (

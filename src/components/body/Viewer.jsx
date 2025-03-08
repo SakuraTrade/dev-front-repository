@@ -3,8 +3,9 @@ import { getFilteredPrice } from "../../utils/getFilteredPrice";
 import { useState } from "react";
 import ImageViwer from "./ImageViewer";
 import EmblaCarousel from "./EmblaCarousel";
+import Button from "../common/Button";
 
-const Viewer = ({ data }) => {
+const Viewer = ({ data, addToFavorites, addToCarts }) => {
   const filteredPrice = getFilteredPrice(data.price);
   const [userQuantity, setQuantity] = useState(0);
   const total_price = getFilteredPrice(data.price * userQuantity);
@@ -42,6 +43,12 @@ const Viewer = ({ data }) => {
         <section className="total_price_wrapper">
           {`${total_price} 입니다.`}
         </section>
+        {data.quantity >= 1 ? (
+          <section className="user_input_wrapper">
+            <Button text={"즐겨찾기"} onClick={addToFavorites} />
+            <Button text={"장바구니"} onClick={addToCarts} />
+          </section>
+        ) : null}
       </section>
     </div>
   );

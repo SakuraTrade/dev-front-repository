@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 const useItem = (id) => {
   const nav = useNavigate();
   const [curItem, setCurItem] = useState();
-  const data = useContext(DataStateContext);
-  console.log(`useItem 상의 데이터 : ${data}`);
+  const { Items } = useContext(DataStateContext);
+  console.log(`useItem 상의 데이터 : ${Items}`);
   useEffect(() => {
-    if (!data || data.length === 0) return;
+    if (!Items || Items.length === 0) return;
 
-    const currentItem = data.find((item) => String(item.id) === String(id));
+    const currentItem = Items.find((item) => String(item.id) === String(id));
 
     console.log(`입력받은 id : ${id}`);
 

@@ -1,10 +1,10 @@
 import "./App.css";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import Item from "./pages/Item";
 
-const mockData = [
+const Items = [
   {
     id: 1,
     price: 10000,
@@ -69,15 +69,23 @@ const mockData = [
 ];
 
 export const DataStateContext = createContext();
+export const DataDispatchContext = createContext();
 
 function App() {
+  const [favorites, setFavorites] = useState([]);
+  const [shoppingCarts, setShoppingCarts] = useState([]);
+
   return (
     <>
-      <DataStateContext.Provider value={mockData}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/items/:id" element={<Item />} />
-        </Routes>
+      <DataStateContext.Provider value={{ Items, favorites, shoppingCarts }}>
+        <DataDispatchContext.Provider
+          value={{ setFavorites, setShoppingCarts }}
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/items/:id" element={<Item />} />
+          </Routes>
+        </DataDispatchContext.Provider>
       </DataStateContext.Provider>
     </>
   );

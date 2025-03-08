@@ -4,12 +4,12 @@ import Header from "../components/header/Header";
 import Body from "../components/body/Body";
 
 const Home = () => {
-  const data = useContext(DataStateContext);
-  console.log(data);
+  const { Items } = useContext(DataStateContext);
+  console.log(Items);
   return (
     <>
       <Header />
-      <Body data={data} />
+      <Body data={Items} />
     </>
   );
 };
