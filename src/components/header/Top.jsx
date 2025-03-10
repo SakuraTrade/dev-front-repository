@@ -1,16 +1,14 @@
 import Button from "../common/Button";
 import "../common/Button";
+import { useNavigate } from "react-router-dom";
 
 const Top = () => {
+  const nav = useNavigate();
+
   return (
     <div className="Top">
       <div className="Favorites">
-        <Button
-          text={"★ 즐겨찾기"}
-          onClick={(e) => {
-            console.log(e);
-          }}
-        />
+        <Button text={"★ 즐겨찾기"} onClick={() => nav("/favorites")} />
       </div>
       <div className="User">
         <Button

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import { createContext, useState } from "react";
 import Item from "./pages/Item";
+import Favorites from "./pages/Favorites";
 
 const Items = [
   {
@@ -84,6 +85,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/items/:id" element={<Item />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </DataDispatchContext.Provider>
       </DataStateContext.Provider>

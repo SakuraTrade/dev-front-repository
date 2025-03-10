@@ -6,7 +6,7 @@ const useItem = (id) => {
   const nav = useNavigate();
   const [curItem, setCurItem] = useState();
   const { Items } = useContext(DataStateContext);
-  console.log(`useItem 상의 데이터 : ${Items}`);
+  
   useEffect(() => {
     if (!Items || Items.length === 0) return;
 
