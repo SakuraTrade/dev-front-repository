@@ -8,25 +8,9 @@ import { DataStateContext, DataDispatchContext } from "../App";
 
 const Item = () => {
   const params = useParams();
-  const nav = useNavigate();
   const curItem = useItem(params.id);
   const [loading, setLoading] = useState(true);
-  const { favorites, shoppingCarts } = useContext(DataStateContext);
-  const { setFavorites, setShoppingCarts } = useContext(DataDispatchContext);
-
-  const addToFavorites = (newItem) => {
-    setFavorites([...favorites, newItem]);
-    if (window.confirm("즐겨찾기로 이동하시겠습니까?")) {
-      nav("/favorites");
-    }
-  };
-
-  const addToCarts = (newItem) => {
-    setShoppingCarts([...shoppingCarts, newItem]);
-    if (window.confirm("장바구니로 이동하시겠습니까?")) {
-      nav("/carts");
-    }
-  };
+  const { addToFavorites, addToCarts } = useContext(DataDispatchContext);
 
   useEffect(() => {
     if (curItem !== undefined) {

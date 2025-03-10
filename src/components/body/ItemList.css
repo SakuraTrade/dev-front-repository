@@ -13,3 +13,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.empty_wrapper {
+  justify-content: center;
+  align-items: center;
+}

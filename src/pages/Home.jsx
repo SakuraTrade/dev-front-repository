@@ -5,7 +5,6 @@ import Body from "../components/body/Body";
 
 const Home = () => {
   const { Items } = useContext(DataStateContext);
-  console.log(Items);
   return (
     <>
       <Header />
