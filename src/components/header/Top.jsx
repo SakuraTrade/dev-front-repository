@@ -1,3 +1,4 @@
+import "./Top.css";
 import Button from "../common/Button";
 import "../common/Button";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +13,6 @@ import {
 const Top = () => {
   const nav = useNavigate();
   const dispatch = useDispatch();
-  const username = useSelector(selectUsername);
   const status = useSelector(selectStatus);
 
   return (
@@ -22,7 +22,7 @@ const Top = () => {
       </div>
       <div className="User">
         {status === "logout" ? (
-          <div>
+          <div className="logout">
             <Button
               text={"회원가입"}
               onClick={(e) => {
@@ -32,20 +32,21 @@ const Top = () => {
             <Button
               text={"로그인"}
               onClick={() => {
-                dispatch(login({ id: "123", username: "testUser" }));
+                // dispatch(login({ id: "123", username: "testUser" }));
+                nav("/login");
               }}
             />
           </div>
         ) : (
-          <div>
+          <div className="login">
             <Button
-              text={"로그아웃웃"}
+              text={"로그아웃"}
               onClick={() => {
                 dispatch(logout());
               }}
             />
             <Button
-              text={`${username}의 마이페이지`}
+              text={`마이페이지`}
               onClick={(e) => {
                 console.log(e);
               }}

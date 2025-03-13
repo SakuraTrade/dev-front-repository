@@ -1,10 +1,11 @@
 import "./LoginMain.css";
-const Login = ({ onSubmitHandler }) => {
+
+const LoginMain = ({ onSubmitHandler }) => {
   return (
     <div className="LoginMain">
       <h2>Login</h2>
-      <form onSubmit={(e)=>(onSubmitHandler(e))}>
-        <input type="text" name="userName" placeholder="Email" />
+      <form id="login-form" onSubmit={(e) => onSubmitHandler(e)}>
+        <input type="text" name="userId" placeholder="Email" />
         <input type="password" name="userPassword" placeholder="Password" />
         <label htmlFor="remember-check">
           <input type="checkbox" id="remember-check" />
@@ -16,4 +17,4 @@ const Login = ({ onSubmitHandler }) => {
   );
 };
 
-export default Login;
+export default LoginMain;

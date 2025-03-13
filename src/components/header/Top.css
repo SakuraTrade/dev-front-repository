@@ -5,3 +5,12 @@
   align-items: center;
   border-bottom: 1px solid rgb(236, 236, 236);
 }
+
+.Favorites {
+  margin-left: 0;
+}
+
+.User {
+  margin-right: 0;
+  display: flex;
+}

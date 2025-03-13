@@ -1,18 +1,27 @@
-// import LoginMain from "./../components/login/LoginMain";
+import LoginMain from "./../components/login/LoginMain";
+import { useDispatch } from "react-redux";
+import { login } from "../context/loginSlice";
+import { replace, useNavigate } from "react-router-dom";
+const Login = () => {
+  const dispatch = useDispatch();
+  const nav = useNavigate();
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-// const onSubmit = async (e) => {
-//   e.preventDefault();
-//   console.log(e);
+    const formData = new FormData(e.target);
+    const userId = formData.get("userId");
+    const userPassword = formData.get("userPassword");
 
-//   const sampleUser = {
-//     userName: "test@example.com",
-//     userPassword: "1234",
-//   };
+    if (!userId || !userPassword) {
+      alert("이메일과 비밀번호를 입력하세요.");
+      return;
+    }
 
-//   if()
-// };
-// const Login = () => {
-//   return <LoginMain onSubmitHandler={onSubmit} />;
-// };
+    dispatch(login({ id: userId, userName: userId }));
+    nav(-1);
+  };
 
-// export default Login;
+  return <LoginMain onSubmitHandler={onSubmit} />;
+};
+
+export default Login;

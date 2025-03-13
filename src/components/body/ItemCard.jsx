@@ -1,15 +1,15 @@
-import "./Item.css";
+import "./ItemCard.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { DataStateContext, DataDispatchContext } from "../../App";
+import { DataDispatchContext } from "../../App";
 import Button from "../common/Button";
 
-const Item = (item) => {
+const ItemCard = (item) => {
   const nav = useNavigate();
   const { addToFavorites } = useContext(DataDispatchContext);
 
   return (
-    <div className="Item">
+    <div className="ItemCard">
       <div
         className="info_wrapper"
         onClick={() => {
@@ -32,4 +32,4 @@ const Item = (item) => {
   );
 };
 
-export default Item;
+export default ItemCard;

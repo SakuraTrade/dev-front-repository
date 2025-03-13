@@ -8,6 +8,7 @@ import Carts from "./pages/Carts";
 // import Login from "./pages/login";
 import useFavorites from "./hooks/useFavorites";
 import useCarts from "./hooks/useCarts";
+import Login from "./pages/login";
 
 const Items = [
   {
@@ -91,7 +92,7 @@ function App() {
             <Route path="/items/:id" element={<Item />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/carts" element={<Carts />} />
-            {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/login" element={<Login />} />
           </Routes>
         </DataDispatchContext.Provider>
       </DataStateContext.Provider>

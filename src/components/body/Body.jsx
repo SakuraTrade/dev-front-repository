@@ -1,6 +1,7 @@
 import { getNewItems } from "../../utils/getNewItems";
 import { getSaleItems } from "../../utils/getSaleItems";
 import ItemList from "./ItemList";
+import "./Body.css";
 
 const Body = ({ data }) => {
   const newItems = getNewItems(data);
