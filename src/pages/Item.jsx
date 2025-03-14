@@ -28,7 +28,6 @@ const Item = () => {
 
   return (
     <div>
-      <Header />
       <Viewer
         data={curItem}
         addToFavorites={addToFavorites}

@@ -11,7 +11,6 @@ const Favorites = () => {
   }
   return (
     <div className="Favorites">
-      <Header />
       <ItemList title={"즐겨찾기"} data={favorites} />
     </div>
   );
