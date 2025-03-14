@@ -9,6 +9,7 @@ import Carts from "./pages/Carts";
 import useFavorites from "./hooks/useFavorites";
 import useCarts from "./hooks/useCarts";
 import Login from "./pages/login";
+import Header from "./components/header/Header";
 
 const Items = [
   {
@@ -87,6 +88,7 @@ function App() {
         <DataDispatchContext.Provider
           value={{ addToFavorites, deleteFavorites, addToCarts, deleteCarts }}
         >
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/items/:id" element={<Item />} />

@@ -1,15 +1,12 @@
 import { useContext } from "react";
 import { DataStateContext } from "../App";
-
-import Header from "../components/header/Header";
 import Body from "../components/body/Body";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
   const { Items } = useContext(DataStateContext);
-
   return (
     <>
-      <Header />
       <Body data={Items} />
     </>
   );

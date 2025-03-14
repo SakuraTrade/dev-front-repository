@@ -1,7 +1,7 @@
 import LoginMain from "./../components/login/LoginMain";
 import { useDispatch } from "react-redux";
 import { login } from "../context/loginSlice";
-import { replace, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();

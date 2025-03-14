@@ -1,41 +1,59 @@
 .Navigator {
-  display: flex;
-  justify-content: center;
+  background-color: #505050;
   padding: 10px 0;
-  background-color: gray;
-  color: white;
 }
 
-.Navigator ul {
+.menu {
+  list-style-type: none;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
-.Navigator li {
-  padding: 10px 15px;
+.menu > li {
+  position: relative;
+  padding: 10px 20px;
 }
 
-.Navigator a {
+.menu a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease-in-out;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.Navigator a:hover {
-  color: #ffcc00; /* 호버 시 색 변경 */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style-type: none;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
 }
 
-/* ✅ 반응형: 화면이 작아지면 네비게이션을 세로로 정렬 */
-@media (max-width: 768px) {
-  .Navigator ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+.dropdown-menu li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  color: black;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
