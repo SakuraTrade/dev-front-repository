@@ -3,10 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DataDispatchContext } from "../../App";
 import Button from "../common/Button";
+import { useDispatch } from "react-redux";
+import { addToFavorite, deleteFavorite } from "../../context/FavoriteSlice";
 
 const ItemCard = (item) => {
   const nav = useNavigate();
-  const { addToFavorites } = useContext(DataDispatchContext);
+  const dispatch = useDispatch();
+  // const { addToFavorites, addToCarts } = useContext(DataDispatchContext);
 
   return (
     <div className="ItemCard">
@@ -25,8 +28,11 @@ const ItemCard = (item) => {
       </div>
 
       <div className="button_wrapper">
-        <Button text={"즐겨찾기"} onClick={() => addToFavorites(item)} />
-        <Button text={"즐겨찾기"} onClick={() => addToFavorites(item)} />
+        {/* <Button text={"장바구니 담기"} onClick={() => addToCarts(item)} /> */}
+        <Button
+          text={"즐겨찾기"}
+          onClick={() => dispatch(addToFavorite(item))}
+        />
       </div>
     </div>
   );

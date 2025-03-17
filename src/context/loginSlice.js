@@ -1,15 +1,5 @@
 import { createAppSlice } from "../app/createAppSlice";
 
-// export interface User {
-//   id: string;
-//   username: string;
-// }
-
-// export interface LoginSliceState {
-//   user: User | null;
-//   status: "logout" | "login" | "failed";
-// }
-
 const initialState = {
   user: null,
   status: "logout",

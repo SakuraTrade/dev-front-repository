@@ -32,7 +32,6 @@ const Top = () => {
             <Button
               text={"로그인"}
               onClick={() => {
-                // dispatch(login({ id: "123", username: "testUser" }));
                 nav("/login");
               }}
             />
@@ -43,6 +42,12 @@ const Top = () => {
               text={"로그아웃"}
               onClick={() => {
                 dispatch(logout());
+              }}
+            />
+            <Button
+              text={"장바구니"}
+              onClick={() => {
+                nav("/carts");
               }}
             />
             <Button
