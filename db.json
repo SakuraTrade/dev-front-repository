@@ -61,5 +61,7 @@
       "img_URI": ["/assets/test_data4.png"],
       "tag": ["DOUJINSHI"]
     }
-  ]
+  ],
+  "favorites": [],
+  "carts": []
 }

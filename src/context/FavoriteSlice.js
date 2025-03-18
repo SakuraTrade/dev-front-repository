@@ -1,24 +1,25 @@
-import { createAppSlice } from "../app/createAppSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   favorites: [],
 };
 
-export const FavoriteSlice = createAppSlice({
+export const FavoriteSlice = createSlice({
   name: "favorite",
-  initialState,
+  initialState: initialState,
   reducers: (create) => ({
     addToFavorite: create.reducer((state, action) => {
-      state.favorites = state.favorites || []; // 기본값 보장
+      console.log("Current favorites:", state.favorites);
+      console.log("New payload:", action.payload);
       if (state.favorites.some((item) => item.id === action.payload.id)) {
         return;
       }
-      state.favorites.push(action.payload);
+      state.favorites = [...state.favorites, action.payload];
     }),
     deleteFavorite: create.reducer((state, action) => {
       if (!state.favorites.length) return;
       const newItems = state.favorites.filter(
-        (item) => item.id !== action.payload
+        (item) => item.id !== action.payload.id
       );
       state.favorites = newItems;
     }),
