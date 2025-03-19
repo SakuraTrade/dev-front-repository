@@ -4,7 +4,7 @@ import Top from "./Top";
 
 const Header = () => {
   return (
-    <div className="w-full shadow-md">
+    <div className="w-full">
       <Top />
       <Center />
       <Navigator />

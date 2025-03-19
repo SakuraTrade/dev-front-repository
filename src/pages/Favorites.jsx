@@ -8,7 +8,7 @@ import useFavorites from "../hooks/useFavorites";
 
 const Favorites = () => {
   // const { favorites } = useContext(DataStateContext);
-  const { favorites } = useSelector(selectFavorites);
+  const favorites = useSelector(selectFavorites);
 
   if (!favorites) {
     return <div>데이터 로딩중...!</div>;
