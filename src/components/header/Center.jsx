@@ -14,7 +14,7 @@ const Center = () => {
       </div>
       <div className="flex justify-end flex-1 mr-8">
         <div className="flex items-center border-2 border-gray-100">
-          <input type="text" className="" placeholder="검색" />
+          <input type="text" className="outline-none" placeholder="검색" />
           <button className="bg-black text-white h-full w-5 grid place-content-center">
             <FaSearch />
           </button>

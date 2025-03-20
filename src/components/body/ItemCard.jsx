@@ -8,14 +8,14 @@ const ItemCard = (item) => {
   const nav = useNavigate();
 
   return (
-    <div className="max-w-50 max-h-75 flex-col">
+    <div className="max-w-50 max-h-75 flex-col cursor-pointer">
       <div
         className="flex-col"
         onClick={() => {
           nav(`/items/${item.id}`);
         }}
       >
-        <div className="">
+        <div className="max-w-30 max-h-30 mx-auto my-2">
           <img src={item.img_URI[0]} />
         </div>
         <div className="font-bold">{item.title}</div>
@@ -31,7 +31,7 @@ const ItemCard = (item) => {
               setFavorite(!favorite);
             }}
           >
-            <GoHeart />
+            <GoHeartFill />
           </button>
         ) : (
           <button
@@ -40,7 +40,7 @@ const ItemCard = (item) => {
               setFavorite(!favorite);
             }}
           >
-            <GoHeartFill />
+            <GoHeart />
           </button>
         )}
         <button className="w-50 h-10 flex justify-center items-center gap-1 bg-sky-400 text-white rounded-sm cursor-pointer">

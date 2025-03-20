@@ -7,7 +7,7 @@ const Body = ({ data }) => {
   const saleItems = getSaleItems(data);
 
   return (
-    <div className="w-full h-full p-2 m-2">
+    <div className="w-full h-full p-2 mx-auto my-2">
       <ItemList title={"신상 아이템"} data={newItems} />
       <ItemList title={"세일 아이템"} data={saleItems} />
       <ItemList title={"전체 아이템"} data={data} />

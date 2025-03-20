@@ -1,4 +1,3 @@
-import "./Top.css";
 import Button from "../common/Button";
 import "../common/Button";
 import { useNavigate } from "react-router-dom";
@@ -16,11 +15,11 @@ const Top = () => {
   const status = useSelector(selectStatus);
 
   return (
-    <div className="Top">
-      <div className="Favorites">
+    <div className="flex justify-evenly border-b-1 border-gray-300">
+      <div className="flex-1">
         <Button text={"★ 즐겨찾기"} onClick={() => nav("/favorites")} />
       </div>
-      <div className="User">
+      <div className="flex">
         {status === "logout" ? (
           <div className="logout">
             <Button
@@ -58,12 +57,14 @@ const Top = () => {
             />
           </div>
         )}
-        <Button
-          text={"FAQ"}
-          onClick={(e) => {
-            console.log(e);
-          }}
-        />
+        <div>
+          <Button
+            text={"FAQ"}
+            onClick={(e) => {
+              console.log(e);
+            }}
+          />
+        </div>
       </div>
     </div>
   );

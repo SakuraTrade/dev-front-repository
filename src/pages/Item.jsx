@@ -27,7 +27,7 @@ const Item = () => {
   }
 
   return (
-    <div>
+    <div className="w-screen m-auto">
       <Viewer
         data={curItem}
         addToFavorites={addToFavorites}
