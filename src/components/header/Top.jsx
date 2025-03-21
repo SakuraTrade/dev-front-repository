@@ -25,7 +25,7 @@ const Top = () => {
             <Button
               text={"회원가입"}
               onClick={(e) => {
-                console.log(e);
+                nav("/signup");
               }}
             />
             <Button

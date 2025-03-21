@@ -15,7 +15,7 @@ const ItemCard = (item) => {
           nav(`/items/${item.id}`);
         }}
       >
-        <div className="max-w-30 max-h-30 mx-auto my-2">
+        <div className="mx-auto my-2">
           <img src={item.img_URI[0]} />
         </div>
         <div className="font-bold">{item.title}</div>
@@ -23,7 +23,7 @@ const ItemCard = (item) => {
         <div className="">{`${item.price}원`}</div>
       </div>
 
-      <div className="flex gap-1">
+      {/* <div className="flex gap-1">
         {favorite ? (
           <button
             className="w-10 h-10 grid place-items-center rounded-sm bg-green-200 text-red-400 "
@@ -46,7 +46,7 @@ const ItemCard = (item) => {
         <button className="w-50 h-10 flex justify-center items-center gap-1 bg-sky-400 text-white rounded-sm cursor-pointer">
           <FaCartShopping /> 장바구니에 담기
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
